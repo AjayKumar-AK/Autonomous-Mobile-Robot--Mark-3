@@ -1,0 +1,21 @@
+twist_mux:
+  ros__parameters:
+    use_stamped: false
+    frame_id: "base_link"
+
+    topics:
+      navigation:
+        topic   : cmd_vel_nav
+        timeout : 0.5
+        priority: 100
+        type    : "geometry_msgs/msg/Twist"
+
+      teleop:
+        topic   : cmd_vel_smoothed
+        timeout : 0.5
+        priority: 10
+        type    : "geometry_msgs/msg/Twist"
+
+    output:
+      topic: cmd_vel
+      type: "geometry_msgs/msg/Twist"
